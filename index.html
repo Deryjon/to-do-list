@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,46 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- font awsome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css" integrity="sha512-gMjQeDaELJ0ryCI+FtItusU9MkAifCZcGq789FrzkiM49D8lbDhoaUaIX4ASU187wofMNlgBJ4ckbrXM9sE6Pg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css"
+      integrity="sha512-gMjQeDaELJ0ryCI+FtItusU9MkAifCZcGq789FrzkiM49D8lbDhoaUaIX4ASU187wofMNlgBJ4ckbrXM9sE6Pg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-    <link rel="stylesheet" href="src/assets/tailwind.css">
+    <link rel="stylesheet" href="src/assets/tailwind.css" />
     <title>Vite App</title>
   </head>
   <body class="bg-light">
-
     <div class="container p-10">
-      <h2 class="text-3xl text-center font-medium italic text-blue">Simple ToDo</h2>
-      <div class="todo-wrapper shadow p-5 bg-white max-w-[420px] mx-auto my-5 rounded-md">
+      <h2 class="text-3xl text-center font-medium italic text-blue">
+        Simple ToDo
+      </h2>
+      <div
+        class="todo-wrapper shadow p-5 bg-white max-w-[400px] mx-auto my-5 rounded-md"
+      >
         <!-- input -->
         <div class="flex gap-3">
-          <input type="text" class="border border-light px-5 py-2 outline-none focus:border-blue rounded-md w-full">
-          <button class="btn bg-blue text-white px-4 py-2 rounded-md cursor-pointer hover:bg-dark-blue flex items-center gap-1 ">
-            <i class="fas fa-plus "></i> 
+          <input
+            id="input"
+            type="text"
+            class="border border-light px-5 py-2 outline-none focus:border-blue rounded-md w-full"
+          />
+          <button
+            id="create"
+            class="btn bg-blue text-white px-4 py-2 rounded-md hover:bg-dark-blue flex items-center gap-1"
+          >
+            <i class="fas fa-plus"></i>
           </button>
         </div>
 
         <!-- list -->
-        <ul class="mt-5">
-          <li class="shadow-xl border border-gray p-2 rounded-md mt-2 flex justify-between items-center">
-            <p class="">
-              <i class="fas fa-check-circle cursor-pointer"></i>
-              <span>Hello Iskandar</span>
-            </p>
-
-            <div class="actions">
-              <button class="edit bg-yellow-500 py-2 px-4 rounded-md text-white text-xs hover:bg-yellow-600">
-                <i class="fas fa-edit"></i>
-              </button>
-              <button class="delete bg-red-500 py-2 px-4 rounded-md text-white text-xs hover:bg-red-600">
-                <i class="fas fa-trash"></i>
-              </button>
-            </div>
-          </li>
+        <ul id="todos-wrapper" class="mt-5">
+          <!-- item -->
         </ul>
-
       </div>
     </div>
-
 
     <script type="module" src="/main.js"></script>
   </body>
