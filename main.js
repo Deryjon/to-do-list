@@ -5,7 +5,7 @@ const createBtn = document.querySelector("#create");
 const todosWrapper = document.querySelector("#todos-wrapper");
 
 const api =
-  "https://to-do-66a0e-default-rtdb.asia-southeast1.firebasedatabase.app/todos";
+  "https://mega-to-do-app-6b08e-default-rtdb.asia-southeast1.firebasedatabase.app/todos";
 
 // EVENTS
 createBtn.addEventListener("click", createToDo);
@@ -13,7 +13,6 @@ window.addEventListener("load", fetchTodos);
 todosWrapper.addEventListener("click", completeTask);
 
 // FUNCTIONS
-// -> post
 async function createToDo() {
   const value = input.value.trim();
   if (!value) return;
@@ -30,7 +29,7 @@ async function createToDo() {
   });
   const data = await res.json();
   input.value = "";
-  fetchTodos();
+	fetchTodos()
 }
 
 // -> get
@@ -48,7 +47,8 @@ async function completeTask(e) {
   const todoItem = e.target.parentElement.parentElement;
   if (!e.target.classList.contains("fa-check-circle")) return;
 
-  const completeStatus = JSON.parse(todoItem.getAttribute("done"));
+	const completeStatus = JSON.parse(todoItem.getAttribute("done"))
+	console.log(completeStatus);
 
   const res = await fetch(`${api}/${todoItem.id}.json`, {
     method: "PATCH",
@@ -56,3 +56,4 @@ async function completeTask(e) {
   });
   fetchTodos();
 }
+
