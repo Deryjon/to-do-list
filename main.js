@@ -85,13 +85,30 @@ async function prepareToEdit(e) {
     editBtn.classList.add("flex");
     createBtn.classList.add("hidden");
     createBtn.classList.remove("flex");
+
+    editBtn.addEventListener("click", () => {
+      createBtn.classList.remove("hidden");
+      createBtn.classList.add("flex");
+      editBtn.classList.add("hidden");
+      editBtn.classList.remove("flex");
+    });
+    liCancelBtn.addEventListener("click", () => {
+      liEditBtn.classList.remove("hidden");
+      liDeleteBtn.classList.remove("hidden");
+      liCancelBtn.classList.add("hidden");
+      input.value = "";
+			createBtn.classList.remove("hidden");
+      createBtn.classList.add("flex");
+      editBtn.classList.add("hidden");
+      editBtn.classList.remove("flex");
+    });
   }
 }
 
 async function editTask() {
   const res = await fetch(`${api}/${taskToEdit}.json`, {
     method: "PATCH",
-    body: JSON.stringify({ task: input.value }) ,
+    body: JSON.stringify({ task: input.value }),
   });
   fetchTodos();
   input.value = "";
