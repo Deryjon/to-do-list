@@ -37,6 +37,7 @@ async function createToDo() {
   const data = await res.json();
   input.value = "";
   fetchTodos();
+	toast.success("Task added!")
 }
 
 // -> get
@@ -101,6 +102,7 @@ async function prepareToEdit(e) {
       createBtn.classList.add("flex");
       editBtn.classList.add("hidden");
       editBtn.classList.remove("flex");
+			toast.success("Canceled!")
     });
   }
 }
@@ -127,3 +129,10 @@ async function deleteTask(e) {
   fetchTodos();
   toast.success("Task was deleted!");
 }
+
+function toggleSkeletonLoading() {
+	const skeletonElement = document.querySelector('.skeleton');
+	skeletonElement.classList.toggle('skeleton-loading');
+}
+
+// Call toggleSkeletonLoading() when necessary, for example when data is being fetched
